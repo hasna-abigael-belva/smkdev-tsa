@@ -1,87 +1,127 @@
-# SMK.DEV Siap Menghasilkan Talenta Digital Siap Kerja
+# SMK.DEV TSA - Python Implementation
 
-SMK.DEV merupakan lembaga pelatihan yang berkomitmen mencetak talenta digital bertaraf global. Program kami dirancang untuk memberikan pembelajaran mendalam yang relevan, berbasis *project-based learning*, serta dibimbing langsung oleh para profesional industri. Dengan pendekatan ini, peserta akan memiliki keterampilan praktis yang siap diaplikasikan di dunia digital yang terus berkembang.
+Implementasi solusi untuk ketiga soal algoritma menggunakan Python.
 
+## Soal yang Diimplementasikan
 
-## Tahapan Tes Coding
+### 1. Apartment Allocation (Easy)
+- **File**: `apartment_allocation.py`
+- **Algoritma**: Greedy dengan sorting dan two-pointer technique
+- **Kompleksitas**: O(n log n + m log m) untuk sorting, O(n + m) untuk matching
+- **Fungsi Utama**: `apartment_allocation(n, m, k, applicants, apartments)`
 
-Sebagai bagian dari proses seleksi, peserta akan mengikuti beberapa tahapan tes yang dirancang untuk memastikan kesiapan, kemampuan teknis, serta kecocokan terhadap kebutuhan industri. 
+### 2. Tower of Hanoi (Intermediate)
+- **File**: `tower_of_hanoi.py`
+- **Algoritma**: Rekursif dengan strategi divide-and-conquer
+- **Kompleksitas**: O(2^n) - jumlah gerakan minimal adalah 2^n - 1
+- **Fungsi Utama**: `tower_of_hanoi(n, source, auxiliary, destination, moves)`
 
+### 3. Palindrome Queries (Hard)
+- **File**: `palindrome_queries.py`
+- **Algoritma**: Two-pointer untuk pengecekan palindrome dengan update dinamis
+- **Kompleksitas**: O(m * L) dimana m adalah jumlah operasi dan L adalah panjang substring
+- **Fungsi Utama**: `palindrome_queries(n, m, s, operations)`
 
-### Tahapan Test:
-1. **Proses Seleksi:**
-   Anda akan mengikuti serangkaian tes untuk mengukur kemampuan dan kesiapan Anda sebelum disalurkan sebagai talenta digital.
+## Cara Menjalankan
 
-2. **Tes Coding sebagai Tahap Utama:**
-   Tes coding merupakan salah satu tahapan seleksi utama. Tes ini bertujuan untuk mengevaluasi kemampuan teknis Anda secara komprehensif, mulai dari pemahaman algoritma, logika pemrograman, hingga kualitas penulisan kode.
+### Menjalankan Program Utama
+```bash
+# Apartment Allocation
+python3 apartment_allocation.py
 
-3. **Tujuan Tes Coding:**
-   Tes ini dirancang untuk memvalidasi keahlian Anda agar sesuai dengan kebutuhan spesifik klien yang akan Anda hadapi.
+# Tower of Hanoi
+python3 tower_of_hanoi.py
 
-4. **Pengumuman Hasil:**
-   Hasil tes coding akan diumumkan dalam waktu maksimal 1x24 jam setelah penyelesaian tes.
-
-
-## Alur Tes Coding
-
-Berikut adalah alur pelaksanaan tes coding yang perlu Anda ikuti:  
-
-```mermaid 
-sequenceDiagram
-    actor Talent as Talenta Digital
-    participant GitHub as Platform GitHub
-    actor SMKDEV as Tim SMK.DEV
-    Talent->>GitHub: *Fork* repository Talent Assessment Developer
-    Talent->>GitHub: *Pull* repository dari *fork*
-    Talent->>Talent: Menyelesaikan tugas coding
-    Talent->>GitHub: *Push* kode ke *forked repository*
-    Talent->>GitHub: Ajukan *Pull Request* ke repository utama
-    SMKDEV->>GitHub: Memeriksa *Pull Request*
-    SMKDEV-->>Talent: Mengirimkan hasil tes
+# Palindrome Queries
+python3 palindrome_queries.py
 ```
 
+### Menjalankan Unit Tests
+```bash
+# Menjalankan semua test
+python3 run_tests.py
 
-## **Instruksi Tes Coding**
+# Atau menggunakan script bash
+./test.sh
 
-Ikuti langkah-langkah berikut untuk menyelesaikan tes coding dengan benar:
+# Menjalankan test individual
+python3 -m unittest test_apartment_allocation.py
+python3 -m unittest test_tower_of_hanoi.py
+python3 -m unittest test_palindrome_queries.py
+```
 
-1. **Ambil Repository dari Fork:**
-   Lakukan *fork* pada repository tes di [Talent Assessment Developer](https://github.com/smkdev-id/smkdev-tsa) dan lakukan *pull* ke lokal Anda.
+## Format Input/Output
 
-2. **Selesaikan Tugas pada Fungsi yang Telah Disediakan:**
-   Tulis kode di dalam fungsi yang sudah ditentukan. Contoh format fungsi:
-   ```javascript
-   function WeightedStrings(keyword, query) {
-       // Tulis kode di sini
-   }
-   ```
+### Apartment Allocation
+**Input:**
+```
+4 3 5
+60 45 80 60
+30 60 75
+```
 
-3. **Lakukan Commit Sesuai Standar:**
-   Gunakan format *commit* yang sesuai dengan standar [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/).
+**Output:**
+```
+2
+```
 
-4. **Jalankan Unit Testing:**
-   Uji kode Anda menggunakan metode **unit testing** untuk memastikan fungsionalitasnya sesuai.
+### Tower of Hanoi
+**Input:**
+```
+2
+```
 
-5. **Push dan Ajukan Pull Request:**
-   Lakukan *push* kode ke repository yang telah di-*fork*, kemudian ajukan *pull request* ke repository utama.
+**Output:**
+```
+3
+1 2
+1 3
+2 3
+```
 
-6. **Ajukan Pertanyaan jika Diperlukan:**
-   Jika terdapat pertanyaan atau kendala, silakan ajukan melalui fitur *issue* di [repository GitHub](https://github.com/smkdev-id/smkdev-tsa).
+### Palindrome Queries
+**Input:**
+```
+7 5
+aybabtu
+2 3 5
+1 3 x
+2 3 5
+1 5 x
+2 3 5
+```
 
+**Output:**
+```
+1
+0
+1
+```
 
+## Struktur File
 
-Dengan mengikuti tahapan dan panduan ini, kami yakin Anda dapat menunjukkan kemampuan terbaik Anda sebagai talenta digital masa depan. 
+```
+tsa_python/
+├── apartment_allocation.py          # Implementasi soal 1
+├── tower_of_hanoi.py               # Implementasi soal 2
+├── palindrome_queries.py           # Implementasi soal 3
+├── test_apartment_allocation.py    # Unit test soal 1
+├── test_tower_of_hanoi.py          # Unit test soal 2
+├── test_palindrome_queries.py      # Unit test soal 3
+├── run_tests.py                    # Script menjalankan semua test
+├── test.sh                         # Script bash untuk test
+└── README.md                       # Dokumentasi ini
+```
 
-**Selamat Mengerjakan!**
+## Requirements
 
+- Python 3.6 atau lebih tinggi
+- Tidak memerlukan library eksternal (hanya menggunakan standard library)
 
+## Catatan Implementasi
 
-## Ikuti Kami di Media Sosial
+1. **Apartment Allocation**: Menggunakan algoritma greedy dengan sorting untuk memaksimalkan jumlah matching
+2. **Tower of Hanoi**: Implementasi rekursif klasik yang menghasilkan solusi optimal
+3. **Palindrome Queries**: Menggunakan two-pointer technique untuk pengecekan palindrome yang efisien
 
-- [WebSite](https://www.smk.dev/)
-- [Instagram](https://www.instagram.com/smkdev.official/)
-- [LinkedIn](https://www.linkedin.com/in/username)
-- [YouTube](https://www.youtube.com/@smkdev)
-- [GitHub](https://github.com/smkdev-id)
-  
-![SMK.DEV SIAP KERJA!!! !](https://smkdev.storage.googleapis.com/wp/Professional-5-Steps-SMKDEV-Build-Digital-Talent-2.png)
+Semua implementasi telah diuji dengan unit test yang komprehensif dan mengikuti contoh kasus yang diberikan dalam soal.
